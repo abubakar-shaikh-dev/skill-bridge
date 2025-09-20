@@ -3,7 +3,6 @@ import {
   FaYoutube,
   FaGlobe,
   FaRocket,
-  FaClock,
   FaStar,
   FaCheckCircle,
 } from "react-icons/fa";
@@ -52,19 +51,6 @@ export default function SuggestedRoadmap({
 
   const handleRegenerateRoadmap = () => {
     generateRoadmap();
-  };
-
-  const getDifficultyColor = (difficulty) => {
-    switch (difficulty?.toLowerCase()) {
-      case "beginner":
-        return "text-green-600 bg-green-50";
-      case "intermediate":
-        return "text-yellow-600 bg-yellow-50";
-      case "advanced":
-        return "text-red-600 bg-red-50";
-      default:
-        return "text-gray-600 bg-gray-50";
-    }
   };
 
   const renderLoadingState = () => (
@@ -217,34 +203,13 @@ export default function SuggestedRoadmap({
                               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                                 {step.skillName}
                               </h3>
-                              <p className="text-gray-600 text-sm mb-3">
-                                {step.description}
-                              </p>
 
                               <div className="flex items-center space-x-4 text-xs">
-                                <span
-                                  className={`px-2 py-1 rounded-full ${getDifficultyColor(
-                                    step.difficulty
-                                  )}`}
-                                >
-                                  {step.difficulty}
-                                </span>
-                                <span className="text-gray-500 flex items-center">
-                                  <FaClock className="w-3 h-3 mr-1" />
-                                  {step.estimatedTime}
-                                </span>
                                 <span className="text-gray-500">
                                   {step.type === "VIDEO"
                                     ? "Video Content"
                                     : "Website Resource"}
                                 </span>
-                                {step.link &&
-                                  !step.link.includes("google.com/search") && (
-                                    <span className="text-green-600 flex items-center">
-                                      <FaCheckCircle className="w-3 h-3 mr-1" />
-                                      Verified Link
-                                    </span>
-                                  )}
                               </div>
                             </div>
 
