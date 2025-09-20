@@ -18,6 +18,17 @@ function RouteComponent() {
     setSelectedSkills(skills);
     setSelectedRole(role);
     setIsAnalysisSubmitted(true);
+
+    // Scroll to SkillGapAnalysis section after a short delay to ensure component is rendered
+    setTimeout(() => {
+      const element = document.getElementById("skill-gap-analysis");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
   };
 
   return (

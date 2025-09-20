@@ -109,7 +109,7 @@ export default function SkillGapAnalysis({
   const chartSeries = [skillBreakdown.matching, skillBreakdown.toLearn];
 
   return (
-    <div className="bg-gray-50 py-16 sm:py-24">
+    <div id="skill-gap-analysis" className="bg-gray-50 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
