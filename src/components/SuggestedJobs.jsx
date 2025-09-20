@@ -40,53 +40,7 @@ export default function SuggestedJobs({
 
   // Fallback static jobs if API fails
   const getFallbackJobs = () => {
-    const roleData = jobRoles.find((role) => role.value === selectedRole);
-    const roleLabel = roleData?.label || selectedRole;
-
-    return [
-      {
-        id: 1,
-        title: `Senior ${roleLabel}`,
-        company: "TechCorp",
-        location: "San Francisco, CA",
-        salaryRange: "$80,000 - $120,000",
-        description:
-          "Join our dynamic team and work on cutting-edge projects with modern technologies.",
-        requiredSkills: selectedSkills.slice(0, 3),
-        experienceLevel: "Senior",
-        applyUrl: `https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(
-          roleLabel
-        )}`,
-      },
-      {
-        id: 2,
-        title: roleLabel,
-        company: "InnovateSoft",
-        location: "Remote",
-        salaryRange: "$60,000 - $90,000",
-        description:
-          "Remote-first company seeking talented professionals to join our growing team.",
-        requiredSkills: selectedSkills.slice(0, 3),
-        experienceLevel: "Mid",
-        applyUrl: `https://www.indeed.com/jobs?q=${encodeURIComponent(
-          roleLabel
-        )}`,
-      },
-      {
-        id: 3,
-        title: `Junior ${roleLabel}`,
-        company: "StartupXYZ",
-        location: "New York, NY",
-        salaryRange: "$45,000 - $65,000",
-        description:
-          "Great opportunity for career growth in a fast-paced startup environment.",
-        requiredSkills: selectedSkills.slice(0, 2),
-        experienceLevel: "Entry",
-        applyUrl: `https://www.glassdoor.com/Jobs/${encodeURIComponent(
-          roleLabel
-        )}-jobs-SRCH_KO0,${roleLabel.length}.htm`,
-      },
-    ];
+    return [];
   };
 
   const handleApplyClick = (job) => {
