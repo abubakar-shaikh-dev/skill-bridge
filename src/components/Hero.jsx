@@ -110,7 +110,10 @@ export default function Example({ onAnalysisSubmit }) {
         <div className="relative py-24 sm:py-32 lg:pb-40">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h4 className="text-3xl font-bold tracking-tight text-white mb-8">
+              <h4
+                className="text-3xl font-bold tracking-tight text-white mb-8"
+                style={{ WebkitTextStroke: "1px black" }}
+              >
                 Bridge Your Skills to Your Dream Job
               </h4>
 
