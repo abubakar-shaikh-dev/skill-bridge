@@ -157,22 +157,6 @@ export default function SuggestedRoadmap({
           <p className="mt-4 text-lg leading-8 text-white">
             A personalized step-by-step guide to bridge your skill gaps
           </p>
-          {roadmapData?.metadata && roadmapData.metadata.totalSteps > 0 && (
-            <div className="mt-6 flex justify-center space-x-8 text-sm text-white">
-              <div className="flex items-center">
-                <FaStar className="w-4 h-4 mr-2 text-yellow-400" />
-                {roadmapData.metadata.totalSteps} Steps
-              </div>
-              <div className="flex items-center">
-                <FaClock className="w-4 h-4 mr-2 text-blue-400" />
-                {roadmapData.metadata.estimatedTime}
-              </div>
-              <div className="flex items-center">
-                <FaRocket className="w-4 h-4 mr-2 text-green-400" />
-                {roadmapData.metadata.targetRole}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Roadmap Content */}
