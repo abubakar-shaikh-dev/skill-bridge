@@ -1,8 +1,104 @@
 import React from "react";
 
-export default function SkillGapAnalysis() {
-  // Mock data - you can replace this with actual data from your analysis
-  const skillGapPercentage = 75;
+// Job role to required skills mapping
+const jobRoleSkills = {
+  "frontend-developer": [
+    "javascript",
+    "typescript",
+    "react",
+    "html",
+    "css",
+    "git",
+    "figma",
+  ],
+  "backend-developer": [
+    "nodejs",
+    "python",
+    "java",
+    "sql",
+    "mongodb",
+    "rest-api",
+    "git",
+  ],
+  "fullstack-developer": [
+    "javascript",
+    "typescript",
+    "react",
+    "nodejs",
+    "sql",
+    "mongodb",
+    "rest-api",
+    "git",
+  ],
+  "data-scientist": [
+    "python",
+    "machine-learning",
+    "data-analysis",
+    "sql",
+    "tensorflow",
+    "pytorch",
+  ],
+  "machine-learning-engineer": [
+    "python",
+    "tensorflow",
+    "pytorch",
+    "machine-learning",
+    "data-analysis",
+    "aws",
+  ],
+  "devops-engineer": ["aws", "docker", "kubernetes", "git", "nodejs", "python"],
+  "ui-ux-designer": ["figma", "adobe-creative-suite", "javascript", "react"],
+  "product-manager": ["agile", "data-analysis", "sql"],
+  "software-architect": [
+    "javascript",
+    "nodejs",
+    "python",
+    "java",
+    "aws",
+    "docker",
+    "sql",
+  ],
+  "mobile-developer": ["javascript", "typescript", "react", "nodejs", "git"],
+};
+
+export default function SkillGapAnalysis({
+  selectedSkills = [],
+  selectedRole = null,
+}) {
+  // Calculate skill match percentage
+  const calculateSkillMatch = () => {
+    if (!selectedRole || !selectedSkills.length) return 0;
+
+    const requiredSkills = jobRoleSkills[selectedRole] || [];
+    if (requiredSkills.length === 0) return 0;
+
+    const matchingSkills = selectedSkills.filter((skill) =>
+      requiredSkills.includes(skill)
+    );
+
+    return Math.round((matchingSkills.length / requiredSkills.length) * 100);
+  };
+
+  const getSkillBreakdown = () => {
+    if (!selectedRole) return { matching: 0, toLearn: 0, critical: 0 };
+
+    const requiredSkills = jobRoleSkills[selectedRole] || [];
+    const matchingSkills = selectedSkills.filter((skill) =>
+      requiredSkills.includes(skill)
+    );
+    const skillsToLearn = requiredSkills.filter(
+      (skill) => !selectedSkills.includes(skill)
+    );
+
+    return {
+      matching: matchingSkills.length,
+      toLearn: Math.min(skillsToLearn.length, 5), // Limit to reasonable number
+      critical: Math.min(skillsToLearn.length, 3), // Most important gaps
+    };
+  };
+
+  const skillGapPercentage = calculateSkillMatch();
+  const skillBreakdown = getSkillBreakdown();
 
   return (
     <div className="bg-gray-50 py-16 sm:py-24">
@@ -71,7 +167,9 @@ export default function SkillGapAnalysis() {
         {/* Additional Insights */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="text-2xl font-bold text-green-600 mb-2">8</div>
+            <div className="text-2xl font-bold text-green-600 mb-2">
+              {skillBreakdown.matching}
+            </div>
             <div className="text-sm font-medium text-gray-900">
               Matching Skills
             </div>
@@ -81,7 +179,9 @@ export default function SkillGapAnalysis() {
           </div>
 
           <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="text-2xl font-bold text-orange-600 mb-2">3</div>
+            <div className="text-2xl font-bold text-orange-600 mb-2">
+              {skillBreakdown.toLearn}
+            </div>
             <div className="text-sm font-medium text-gray-900">
               Skills to Learn
             </div>
@@ -91,7 +191,9 @@ export default function SkillGapAnalysis() {
           </div>
 
           <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="text-2xl font-bold text-blue-600 mb-2">2</div>
+            <div className="text-2xl font-bold text-blue-600 mb-2">
+              {skillBreakdown.critical}
+            </div>
             <div className="text-sm font-medium text-gray-900">
               Critical Gaps
             </div>

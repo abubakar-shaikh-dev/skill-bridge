@@ -6,16 +6,19 @@ import jobRolesData from "../data/jobRoles.json";
 import skillsData from "../data/skills.json";
 import { SiGooglegemini } from "react-icons/si";
 
-export default function Example() {
+export default function Example({ onAnalysisSubmit }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedJobRole, setSelectedJobRole] = useState(null);
   const [selectedSkills, setSelectedSkills] = useState([]);
 
   const handleAnalyze = () => {
-    console.log("Analyzing...");
-    console.log("Job Role:", selectedJobRole);
-    console.log("Skills:", selectedSkills);
-    // Add your analysis logic here
+    if (selectedJobRole && selectedSkills.length > 0) {
+      onAnalysisSubmit(selectedSkills, selectedJobRole);
+    } else {
+      alert(
+        "Please select both a job role and at least one skill before analyzing."
+      );
+    }
   };
 
   return (
