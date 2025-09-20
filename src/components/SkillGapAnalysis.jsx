@@ -1,66 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
-
-// Job role to required skills mapping
-const jobRoleSkills = {
-  "frontend-developer": [
-    "javascript",
-    "typescript",
-    "react",
-    "html",
-    "css",
-    "git",
-    "figma",
-  ],
-  "backend-developer": [
-    "nodejs",
-    "python",
-    "java",
-    "sql",
-    "mongodb",
-    "rest-api",
-    "git",
-  ],
-  "fullstack-developer": [
-    "javascript",
-    "typescript",
-    "react",
-    "nodejs",
-    "sql",
-    "mongodb",
-    "rest-api",
-    "git",
-  ],
-  "data-scientist": [
-    "python",
-    "machine-learning",
-    "data-analysis",
-    "sql",
-    "tensorflow",
-    "pytorch",
-  ],
-  "machine-learning-engineer": [
-    "python",
-    "tensorflow",
-    "pytorch",
-    "machine-learning",
-    "data-analysis",
-    "aws",
-  ],
-  "devops-engineer": ["aws", "docker", "kubernetes", "git", "nodejs", "python"],
-  "ui-ux-designer": ["figma", "adobe-creative-suite", "javascript", "react"],
-  "product-manager": ["agile", "data-analysis", "sql"],
-  "software-architect": [
-    "javascript",
-    "nodejs",
-    "python",
-    "java",
-    "aws",
-    "docker",
-    "sql",
-  ],
-  "mobile-developer": ["javascript", "typescript", "react", "nodejs", "git"],
-};
+import { jobRoleSkills } from "../data/jobRoleSkills.js";
 
 export default function SkillGapAnalysis({
   selectedSkills = [],
