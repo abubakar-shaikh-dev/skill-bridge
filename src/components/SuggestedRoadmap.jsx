@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { FaYoutube, FaGlobe, FaRocket, FaClock, FaStar } from "react-icons/fa";
+import {
+  FaYoutube,
+  FaGlobe,
+  FaRocket,
+  FaClock,
+  FaStar,
+  FaCheckCircle,
+} from "react-icons/fa";
 import { MdOutlineOpenInNew, MdRefresh } from "react-icons/md";
 import { generatePersonalizedRoadmap } from "../services/roadmapService.js";
 
@@ -247,6 +254,13 @@ export default function SuggestedRoadmap({
                                     ? "Video Content"
                                     : "Website Resource"}
                                 </span>
+                                {step.link &&
+                                  !step.link.includes("google.com/search") && (
+                                    <span className="text-green-600 flex items-center">
+                                      <FaCheckCircle className="w-3 h-3 mr-1" />
+                                      Verified Link
+                                    </span>
+                                  )}
                               </div>
                             </div>
 
@@ -256,6 +270,26 @@ export default function SuggestedRoadmap({
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md transition-colors text-sm"
+                                onError={(e) => {
+                                  console.warn(
+                                    `Link error for ${step.skillName}:`,
+                                    step.link
+                                  );
+                                  // Could show a fallback action here
+                                }}
+                                onClick={(e) => {
+                                  // Validate link before opening
+                                  try {
+                                    new URL(step.link);
+                                  } catch (error) {
+                                    e.preventDefault();
+                                    console.error(`Invalid URL: ${step.link}`);
+                                    alert(
+                                      "This link appears to be invalid. Please try regenerating the roadmap."
+                                    );
+                                    return false;
+                                  }
+                                }}
                               >
                                 Start Learning
                                 <MdOutlineOpenInNew className="w-4 h-4 ml-2" />

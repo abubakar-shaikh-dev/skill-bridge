@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { generateJobSuggestions } from "../utils/openrouterApi";
+import { searchJobs } from "../services/jobSearchService";
 import jobRoles from "../data/jobRoles.json";
 
 export default function SuggestedJobs({
@@ -21,14 +21,12 @@ export default function SuggestedJobs({
     setError(null);
 
     try {
-      // Get the role label for display
+      // Get the role label for searching
       const roleData = jobRoles.find((role) => role.value === selectedRole);
       const roleLabel = roleData?.label || selectedRole;
 
-      const suggestions = await generateJobSuggestions(
-        roleLabel,
-        selectedSkills
-      );
+      // Search for jobs using TheirStack API
+      const suggestions = await searchJobs(roleLabel, selectedSkills, 9);
       setJobSuggestions(suggestions);
     } catch (err) {
       console.error("Error fetching job suggestions:", err);
@@ -117,7 +115,8 @@ export default function SuggestedJobs({
             Suggested Job Opportunities
           </h2>
           <p className="text-lg text-gray-600">
-            Discover job openings that match your skills and career goals
+            Browse real job openings from companies in India that match your
+            skills
           </p>
         </div>
 
@@ -125,7 +124,7 @@ export default function SuggestedJobs({
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
             <p className="mt-4 text-gray-600">
-              Finding the best job opportunities for you...
+              Finding the latest job opportunities for you...
             </p>
           </div>
         )}
@@ -171,6 +170,11 @@ export default function SuggestedJobs({
                 <div className="mb-3">
                   <p className="text-purple-600 font-medium">{job.company}</p>
                   <p className="text-sm text-gray-500">{job.location}</p>
+                  {job.datePosted && (
+                    <p className="text-xs text-gray-400 mt-1">
+                      Posted: {new Date(job.datePosted).toLocaleDateString()}
+                    </p>
+                  )}
                 </div>
 
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">

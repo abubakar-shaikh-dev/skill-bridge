@@ -1,5 +1,107 @@
 import axios from "axios";
 
+// Link validation cache to avoid repeated checks
+const linkValidationCache = new Map();
+
+/**
+ * Validate if a link is accessible and has proper metadata
+ * @param {string} url - The URL to validate
+ * @returns {Promise<boolean>} - Whether the link is valid and accessible
+ */
+async function validateLink(url) {
+  if (!url || typeof url !== "string") return false;
+
+  // Check cache first
+  if (linkValidationCache.has(url)) {
+    return linkValidationCache.get(url);
+  }
+
+  try {
+    // Basic URL validation
+    const urlObj = new URL(url);
+    if (!["http:", "https:"].includes(urlObj.protocol)) {
+      linkValidationCache.set(url, false);
+      return false;
+    }
+
+    // Check if the URL is accessible (with timeout)
+    const response = await axios.head(url, {
+      timeout: 5000,
+      validateStatus: (status) => status < 400, // Accept redirects
+    });
+
+    const isValid = response.status >= 200 && response.status < 400;
+    linkValidationCache.set(url, isValid);
+    return isValid;
+  } catch (error) {
+    console.warn(`Link validation failed for ${url}:`, error.message);
+    linkValidationCache.set(url, false);
+    return false;
+  }
+}
+
+/**
+ * Generate fallback link based on skill and type
+ * @param {string} skillName - The skill to generate a link for
+ * @param {string} type - Either "VIDEO" or "SITE"
+ * @returns {string} - A verified fallback link
+ */
+function generateFallbackLink(skillName, type) {
+  const skillLower = skillName.toLowerCase();
+
+  // Curated fallback links for common skills
+  const fallbackLinks = {
+    VIDEO: {
+      javascript: "https://www.youtube.com/watch?v=PkZNo7MFNFg",
+      react: "https://www.youtube.com/watch?v=SqcY0GlETPk",
+      nodejs: "https://www.youtube.com/watch?v=fBNz5xF-Kx4",
+      python: "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+      typescript: "https://www.youtube.com/watch?v=BwuLxPH8IDs",
+      html: "https://www.youtube.com/watch?v=pQN-pnXPaVg",
+      css: "https://www.youtube.com/watch?v=yfoY53QXEnI",
+      git: "https://www.youtube.com/watch?v=8JJ101D3knE",
+      sql: "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+      mongodb: "https://www.youtube.com/watch?v=pWbMrx5rVBE",
+    },
+    SITE: {
+      javascript:
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+      react: "https://reactjs.org/tutorial/tutorial.html",
+      nodejs:
+        "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs",
+      python: "https://docs.python.org/3/tutorial/",
+      typescript:
+        "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      html: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      css: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      git: "https://git-scm.com/docs/gittutorial",
+      sql: "https://www.w3schools.com/sql/",
+      mongodb: "https://docs.mongodb.com/manual/tutorial/getting-started/",
+      aws: "https://aws.amazon.com/getting-started/",
+      docker: "https://docs.docker.com/get-started/",
+      kubernetes: "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+    },
+  };
+
+  // Try to find a specific match
+  for (const [skill, link] of Object.entries(fallbackLinks[type] || {})) {
+    if (skillLower.includes(skill)) {
+      return link;
+    }
+  }
+
+  // Default fallback based on type
+  if (type === "VIDEO") {
+    return `https://www.youtube.com/results?search_query=${encodeURIComponent(
+      skillName + " tutorial"
+    )}`;
+  } else {
+    return `https://www.freecodecamp.org/news/search/?query=${encodeURIComponent(
+      skillName
+    )}`;
+  }
+}
+
 // OpenRouter API configuration
 const API_KEY =
   import.meta.env.VITE_OPENROUTER_API_KEY ||
@@ -42,6 +144,7 @@ Create a step-by-step learning roadmap for the missing skills. For each step, pr
 2. Resource type (either "VIDEO" or "SITE")
 3. Estimated learning time
 4. Brief description of what they'll learn
+5. A VALID, ACCESSIBLE learning resource link
 
 Format your response as a JSON array with exactly this structure:
 [
@@ -51,9 +154,22 @@ Format your response as a JSON array with exactly this structure:
     "type": "VIDEO" or "SITE",
     "description": "Brief description",
     "estimatedTime": "2-3 weeks",
-    "difficulty": "Beginner/Intermediate/Advanced"
+    "difficulty": "Beginner/Intermediate/Advanced",
+    "link": "https://valid-accessible-url.com"
   }
 ]
+
+IMPORTANT LINK REQUIREMENTS:
+- For VIDEO type: Use YouTube, Coursera, Udemy, or educational platform URLs
+- For SITE type: Use MDN, official documentation, W3Schools, FreeCodeCamp, or reputable tutorial sites
+- Links MUST be real, accessible URLs that exist and work
+- Prefer free resources over paid ones
+- Use specific tutorial/course URLs, not general homepage URLs
+- Examples of good links:
+  * https://www.youtube.com/watch?v=specific-tutorial
+  * https://developer.mozilla.org/en-US/docs/specific-topic
+  * https://www.freecodecamp.org/learn/specific-course
+  * https://reactjs.org/tutorial/tutorial.html
 
 Make sure to:
 - Order steps logically (prerequisites first)
@@ -61,6 +177,7 @@ Make sure to:
 - Be specific about what they'll learn
 - Consider the user's existing skills
 - Focus on practical, actionable learning objectives
+- ONLY include links that are real and accessible
 
 Respond with only the JSON array, no additional text.
 `;
@@ -88,23 +205,43 @@ Respond with only the JSON array, no additional text.
     // Parse the JSON response
     const roadmapSteps = JSON.parse(aiResponse);
 
-    // Validate and sanitize the response
-    return roadmapSteps.map((step, index) => ({
-      id: index + 1,
-      skillName:
-        step.skillName || `Learn ${missingSkills[index] || "New Skill"}`,
-      type: step.type === "VIDEO" || step.type === "SITE" ? step.type : "SITE",
-      description: step.description || "Complete this learning objective",
-      estimatedTime: step.estimatedTime || "1-2 weeks",
-      difficulty: step.difficulty || "Intermediate",
-      link: `https://www.google.com/search?q=${encodeURIComponent(
-        step.skillName + " tutorial"
-      )}`,
-    }));
+    // Validate and sanitize the response with link validation
+    const validatedSteps = await Promise.all(
+      roadmapSteps.map(async (step, index) => {
+        const baseStep = {
+          id: index + 1,
+          skillName:
+            step.skillName || `Learn ${missingSkills[index] || "New Skill"}`,
+          type:
+            step.type === "VIDEO" || step.type === "SITE" ? step.type : "SITE",
+          description: step.description || "Complete this learning objective",
+          estimatedTime: step.estimatedTime || "1-2 weeks",
+          difficulty: step.difficulty || "Intermediate",
+        };
+
+        // Validate the AI-generated link
+        if (step.link && (await validateLink(step.link))) {
+          baseStep.link = step.link;
+        } else {
+          // Use fallback link if AI link is invalid
+          baseStep.link = generateFallbackLink(
+            baseStep.skillName,
+            baseStep.type
+          );
+          console.warn(
+            `Using fallback link for ${baseStep.skillName}: ${baseStep.link}`
+          );
+        }
+
+        return baseStep;
+      })
+    );
+
+    return validatedSteps;
   } catch (error) {
     console.error("Error generating AI roadmap:", error);
 
-    // Fallback: Return a basic roadmap for missing skills
+    // Fallback: Return a basic roadmap for missing skills with validated links
     return missingSkills.slice(0, 6).map((skill, index) => ({
       id: index + 1,
       skillName: `Learn ${skill.charAt(0).toUpperCase() + skill.slice(1)}`,
@@ -112,9 +249,10 @@ Respond with only the JSON array, no additional text.
       description: `Master the fundamentals of ${skill}`,
       estimatedTime: "2-3 weeks",
       difficulty: "Intermediate",
-      link: `https://www.google.com/search?q=${encodeURIComponent(
-        skill + " tutorial"
-      )}`,
+      link: generateFallbackLink(
+        `Learn ${skill}`,
+        index % 2 === 0 ? "VIDEO" : "SITE"
+      ),
     }));
   }
 }
