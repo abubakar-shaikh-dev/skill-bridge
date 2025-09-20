@@ -173,7 +173,7 @@ IMPORTANT LINK REQUIREMENTS:
 
 Make sure to:
 - Order steps logically (prerequisites first)
-- Limit to 6-8 steps maximum
+- Include ALL missing skills (up to 12 steps maximum)
 - Be specific about what they'll learn
 - Consider the user's existing skills
 - Focus on practical, actionable learning objectives
@@ -242,7 +242,7 @@ Respond with only the JSON array, no additional text.
     console.error("Error generating AI roadmap:", error);
 
     // Fallback: Return a basic roadmap for missing skills with validated links
-    return missingSkills.slice(0, 6).map((skill, index) => ({
+    return missingSkills.map((skill, index) => ({
       id: index + 1,
       skillName: `Learn ${skill.charAt(0).toUpperCase() + skill.slice(1)}`,
       type: index % 2 === 0 ? "VIDEO" : "SITE",
