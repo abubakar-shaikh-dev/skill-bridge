@@ -19,6 +19,8 @@ export const jobRoleSkills = {
     "git",
   ],
   "fullstack-developer": [
+    "html",
+    "css",
     "javascript",
     "typescript",
     "react",
