@@ -1,0 +1,132 @@
+[
+  {
+    "id": "javascript",
+    "label": "JavaScript",
+    "value": "javascript"
+  },
+  {
+    "id": "typescript",
+    "label": "TypeScript",
+    "value": "typescript"
+  },
+  {
+    "id": "react",
+    "label": "React",
+    "value": "react"
+  },
+  {
+    "id": "nodejs",
+    "label": "Node.js",
+    "value": "nodejs"
+  },
+  {
+    "id": "python",
+    "label": "Python",
+    "value": "python"
+  },
+  {
+    "id": "java",
+    "label": "Java",
+    "value": "java"
+  },
+  {
+    "id": "csharp",
+    "label": "C#",
+    "value": "csharp"
+  },
+  {
+    "id": "php",
+    "label": "PHP",
+    "value": "php"
+  },
+  {
+    "id": "golang",
+    "label": "Go",
+    "value": "golang"
+  },
+  {
+    "id": "rust",
+    "label": "Rust",
+    "value": "rust"
+  },
+  {
+    "id": "aws",
+    "label": "AWS",
+    "value": "aws"
+  },
+  {
+    "id": "docker",
+    "label": "Docker",
+    "value": "docker"
+  },
+  {
+    "id": "kubernetes",
+    "label": "Kubernetes",
+    "value": "kubernetes"
+  },
+  {
+    "id": "sql",
+    "label": "SQL",
+    "value": "sql"
+  },
+  {
+    "id": "mongodb",
+    "label": "MongoDB",
+    "value": "mongodb"
+  },
+  {
+    "id": "redis",
+    "label": "Redis",
+    "value": "redis"
+  },
+  {
+    "id": "graphql",
+    "label": "GraphQL",
+    "value": "graphql"
+  },
+  {
+    "id": "rest-api",
+    "label": "REST API",
+    "value": "rest-api"
+  },
+  {
+    "id": "git",
+    "label": "Git",
+    "value": "git"
+  },
+  {
+    "id": "agile",
+    "label": "Agile/Scrum",
+    "value": "agile"
+  },
+  {
+    "id": "tensorflow",
+    "label": "TensorFlow",
+    "value": "tensorflow"
+  },
+  {
+    "id": "pytorch",
+    "label": "PyTorch",
+    "value": "pytorch"
+  },
+  {
+    "id": "machine-learning",
+    "label": "Machine Learning",
+    "value": "machine-learning"
+  },
+  {
+    "id": "data-analysis",
+    "label": "Data Analysis",
+    "value": "data-analysis"
+  },
+  {
+    "id": "figma",
+    "label": "Figma",
+    "value": "figma"
+  },
+  {
+    "id": "adobe-creative-suite",
+    "label": "Adobe Creative Suite",
+    "value": "adobe-creative-suite"
+  }
+]

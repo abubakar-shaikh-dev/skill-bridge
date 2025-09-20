@@ -1,0 +1,52 @@
+[
+  {
+    "id": "frontend-developer",
+    "label": "Frontend Developer",
+    "value": "frontend-developer"
+  },
+  {
+    "id": "backend-developer",
+    "label": "Backend Developer",
+    "value": "backend-developer"
+  },
+  {
+    "id": "fullstack-developer",
+    "label": "Full Stack Developer",
+    "value": "fullstack-developer"
+  },
+  {
+    "id": "data-scientist",
+    "label": "Data Scientist",
+    "value": "data-scientist"
+  },
+  {
+    "id": "machine-learning-engineer",
+    "label": "Machine Learning Engineer",
+    "value": "machine-learning-engineer"
+  },
+  {
+    "id": "devops-engineer",
+    "label": "DevOps Engineer",
+    "value": "devops-engineer"
+  },
+  {
+    "id": "ui-ux-designer",
+    "label": "UI/UX Designer",
+    "value": "ui-ux-designer"
+  },
+  {
+    "id": "product-manager",
+    "label": "Product Manager",
+    "value": "product-manager"
+  },
+  {
+    "id": "software-architect",
+    "label": "Software Architect",
+    "value": "software-architect"
+  },
+  {
+    "id": "mobile-developer",
+    "label": "Mobile Developer",
+    "value": "mobile-developer"
+  }
+]
