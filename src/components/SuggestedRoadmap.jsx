@@ -287,21 +287,6 @@ export default function SuggestedRoadmap({
                 })}
               </>
             )}
-
-          {!selectedRole && !loading && (
-            <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-12 text-center">
-              <div className="text-gray-400 mb-4">
-                <FaRocket className="w-16 h-16 mx-auto" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Select a Role to Get Started
-              </h3>
-              <p className="text-gray-600">
-                Choose your target job role to generate a personalized
-                AI-powered learning roadmap.
-              </p>
-            </div>
-          )}
         </div>
       </div>
     </div>
