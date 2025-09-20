@@ -27,12 +27,6 @@ const skillDisplayNames = {
   css: "CSS & Responsive Design",
 };
 
-/**
- * Generate a personalized learning roadmap
- * @param {Array} selectedSkills - Skills the user currently has
- * @param {string} selectedRole - Target job role
- * @returns {Promise<Object>} - Object containing roadmap data and metadata
- */
 export async function generatePersonalizedRoadmap(
   selectedSkills = [],
   selectedRole = null
@@ -130,11 +124,6 @@ export async function generatePersonalizedRoadmap(
   }
 }
 
-/**
- * Get role-specific information
- * @param {string} role - Job role key
- * @returns {Object} - Role information
- */
 export function getRoleInfo(role) {
   return {
     name: role
