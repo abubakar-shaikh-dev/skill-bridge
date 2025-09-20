@@ -1,6 +1,5 @@
 const API_BASE_URL = "https://api.theirstack.com/v1";
-const API_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ4ZXJ5c2lkZGlxMjM4MEBnbWFpbC5jb20iLCJwZXJtaXNzaW9ucyI6InVzZXIiLCJjcmVhdGVkX2F0IjoiMjAyNS0wOS0yMFQwODo0MzowNS45NTQ2NDcrMDA6MDAifQ.64XziU5nVCLAc-e6rt6nju9tXoj_EOspbrHxluyM_cE";
+const API_KEY = "";
 
 /**
  * Search for jobs using TheirStack API
@@ -32,7 +31,7 @@ export const searchJobs = async (jobTitle, skills = [], limit = 10) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${import.meta.env.VITE_THEIR_STACK_API_KEY}`,
       },
       body: JSON.stringify(requestBody),
     });
