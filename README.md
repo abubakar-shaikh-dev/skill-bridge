@@ -13,7 +13,6 @@
 
 ```bash
 git clone https://github.com/mehaknaz1/BrainBytes.git
-cd app
 ```
 
 2. Install dependencies:
