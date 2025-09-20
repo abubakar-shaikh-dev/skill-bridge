@@ -1,4 +1,5 @@
 import React from "react";
+import Chart from "react-apexcharts";
 
 // Job role to required skills mapping
 const jobRoleSkills = {
@@ -80,7 +81,7 @@ export default function SkillGapAnalysis({
   };
 
   const getSkillBreakdown = () => {
-    if (!selectedRole) return { matching: 0, toLearn: 0, critical: 0 };
+    if (!selectedRole) return { matching: 0, toLearn: 0 };
 
     const requiredSkills = jobRoleSkills[selectedRole] || [];
     const matchingSkills = selectedSkills.filter((skill) =>
@@ -92,13 +93,80 @@ export default function SkillGapAnalysis({
 
     return {
       matching: matchingSkills.length,
-      toLearn: Math.min(skillsToLearn.length, 5), // Limit to reasonable number
-      critical: Math.min(skillsToLearn.length, 3), // Most important gaps
+      toLearn: skillsToLearn.length,
     };
   };
 
   const skillGapPercentage = calculateSkillMatch();
   const skillBreakdown = getSkillBreakdown();
+
+  // Chart configuration for ApexCharts
+  const chartOptions = {
+    chart: {
+      type: "donut",
+      width: "100%",
+      height: 350,
+    },
+    labels: ["Skills You Have", "Skills to Learn"],
+    colors: ["#10B981", "#F59E0B"],
+    legend: {
+      position: "bottom",
+      fontSize: "14px",
+      fontFamily: "Inter, sans-serif",
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "70%",
+          labels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: "16px",
+              fontWeight: 600,
+            },
+            value: {
+              show: true,
+              fontSize: "24px",
+              fontWeight: 700,
+              formatter: function (val) {
+                return val;
+              },
+            },
+            total: {
+              show: true,
+              label: "Total Skills",
+              fontSize: "14px",
+              fontWeight: 400,
+              formatter: function (w) {
+                return w.globals.seriesTotals.reduce((a, b) => {
+                  return a + b;
+                }, 0);
+              },
+            },
+          },
+        },
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    responsive: [
+      {
+        breakpoint: 768,
+        options: {
+          chart: {
+            height: 300,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
+    ],
+  };
+
+  const chartSeries = [skillBreakdown.matching, skillBreakdown.toLearn];
 
   return (
     <div className="bg-gray-50 py-16 sm:py-24">
@@ -137,68 +205,69 @@ export default function SkillGapAnalysis({
 
           {/* Chart Container */}
           <div className="flex justify-center">
-            <div className="w-96 h-96 bg-white rounded-lg shadow-lg border border-gray-200 flex items-center justify-center">
-              {/* Placeholder for ApexCharts */}
-              <div className="text-center text-gray-500">
-                <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                  </svg>
+            <div className="w-96 h-96 bg-white rounded-lg shadow-lg border border-gray-200 p-6">
+              {selectedRole &&
+              (skillBreakdown.matching > 0 || skillBreakdown.toLearn > 0) ? (
+                <Chart
+                  options={chartOptions}
+                  series={chartSeries}
+                  type="donut"
+                  height={350}
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full text-center text-gray-500">
+                  <div>
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <svg
+                        className="w-8 h-8 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-medium">
+                      Select a role and skills
+                    </p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      to see your skill analysis
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm font-medium">Skill Gap Analysis Chart</p>
-                <p className="text-xs text-gray-400 mt-1">
-                  ApexCharts integration coming soon
-                </p>
-              </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Additional Insights */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="text-2xl font-bold text-green-600 mb-2">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="text-center p-8 bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="text-3xl font-bold text-green-600 mb-3">
               {skillBreakdown.matching}
             </div>
-            <div className="text-sm font-medium text-gray-900">
-              Matching Skills
+            <div className="text-lg font-medium text-gray-900 mb-2">
+              Skills You Have
             </div>
-            <div className="text-xs text-gray-500 mt-1">
-              Skills you already have
+            <div className="text-sm text-gray-500">
+              Skills that match your target role
             </div>
           </div>
 
-          <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="text-2xl font-bold text-orange-600 mb-2">
+          <div className="text-center p-8 bg-white rounded-lg shadow-sm border border-gray-200">
+            <div className="text-3xl font-bold text-orange-600 mb-3">
               {skillBreakdown.toLearn}
             </div>
-            <div className="text-sm font-medium text-gray-900">
+            <div className="text-lg font-medium text-gray-900 mb-2">
               Skills to Learn
             </div>
-            <div className="text-xs text-gray-500 mt-1">
-              Recommended for improvement
-            </div>
-          </div>
-
-          <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-            <div className="text-2xl font-bold text-blue-600 mb-2">
-              {skillBreakdown.critical}
-            </div>
-            <div className="text-sm font-medium text-gray-900">
-              Critical Gaps
-            </div>
-            <div className="text-xs text-gray-500 mt-1">
-              High priority skills missing
+            <div className="text-sm text-gray-500">
+              Additional skills to reach your goal
             </div>
           </div>
         </div>
