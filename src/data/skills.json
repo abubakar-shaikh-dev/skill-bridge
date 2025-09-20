@@ -1,113 +1,227 @@
 [
   {
-    "id": "javascript",
-    "label": "JavaScript",
-    "value": "javascript"
+    "id": "adobe-creative-suite",
+    "label": "Adobe Creative Suite",
+    "value": "adobe-creative-suite"
+  },
+  { "id": "agile", "label": "Agile", "value": "agile" },
+  { "id": "ai-engineer", "label": "Ai Engineer", "value": "ai-engineer" },
+  {
+    "id": "android-developer",
+    "label": "Android Developer",
+    "value": "android-developer"
+  },
+  { "id": "api-developer", "label": "Api Developer", "value": "api-developer" },
+  {
+    "id": "ar-vr-developer",
+    "label": "Ar Vr Developer",
+    "value": "ar-vr-developer"
+  },
+  { "id": "aws", "label": "Aws", "value": "aws" },
+  { "id": "aws-developer", "label": "Aws Developer", "value": "aws-developer" },
+  {
+    "id": "azure-developer",
+    "label": "Azure Developer",
+    "value": "azure-developer"
   },
   {
-    "id": "typescript",
-    "label": "TypeScript",
-    "value": "typescript"
+    "id": "backend-developer",
+    "label": "Backend Developer",
+    "value": "backend-developer"
+  },
+  { "id": "bi-developer", "label": "Bi Developer", "value": "bi-developer" },
+  {
+    "id": "blockchain-developer",
+    "label": "Blockchain Developer",
+    "value": "blockchain-developer"
   },
   {
-    "id": "react",
-    "label": "React",
-    "value": "react"
+    "id": "build-engineer",
+    "label": "Build Engineer",
+    "value": "build-engineer"
   },
   {
-    "id": "nodejs",
-    "label": "Node.js",
-    "value": "nodejs"
+    "id": "business-analyst",
+    "label": "Business Analyst",
+    "value": "business-analyst"
   },
   {
-    "id": "python",
-    "label": "Python",
-    "value": "python"
+    "id": "cloud-architect",
+    "label": "Cloud Architect",
+    "value": "cloud-architect"
   },
   {
-    "id": "java",
-    "label": "Java",
-    "value": "java"
+    "id": "cloud-engineer",
+    "label": "Cloud Engineer",
+    "value": "cloud-engineer"
   },
   {
-    "id": "csharp",
-    "label": "C#",
-    "value": "csharp"
+    "id": "configuration-manager",
+    "label": "Configuration Manager",
+    "value": "configuration-manager"
   },
   {
-    "id": "php",
-    "label": "PHP",
-    "value": "php"
+    "id": "consultant-developer",
+    "label": "Consultant Developer",
+    "value": "consultant-developer"
   },
   {
-    "id": "golang",
-    "label": "Go",
-    "value": "golang"
+    "id": "contract-developer",
+    "label": "Contract Developer",
+    "value": "contract-developer"
+  },
+  { "id": "crm-developer", "label": "Crm Developer", "value": "crm-developer" },
+  { "id": "css", "label": "CSS", "value": "css" },
+  { "id": "cto", "label": "Cto", "value": "cto" },
+  {
+    "id": "customer-success-engineer",
+    "label": "Customer Success Engineer",
+    "value": "customer-success-engineer"
   },
   {
-    "id": "rust",
-    "label": "Rust",
-    "value": "rust"
+    "id": "cybersecurity-analyst",
+    "label": "Cybersecurity Analyst",
+    "value": "cybersecurity-analyst"
+  },
+  { "id": "csharp", "label": "Csharp", "value": "csharp" },
+  { "id": "data-analyst", "label": "Data Analyst", "value": "data-analyst" },
+  { "id": "data-engineer", "label": "Data Engineer", "value": "data-engineer" },
+  {
+    "id": "data-scientist",
+    "label": "Data Scientist",
+    "value": "data-scientist"
+  },
+  { "id": "data-analysis", "label": "Data Analysis", "value": "data-analysis" },
+  {
+    "id": "database-administrator",
+    "label": "Database Administrator",
+    "value": "database-administrator"
   },
   {
-    "id": "aws",
-    "label": "AWS",
-    "value": "aws"
+    "id": "database-developer",
+    "label": "Database Developer",
+    "value": "database-developer"
   },
   {
-    "id": "docker",
-    "label": "Docker",
-    "value": "docker"
+    "id": "deep-learning-engineer",
+    "label": "Deep Learning Engineer",
+    "value": "deep-learning-engineer"
   },
   {
-    "id": "kubernetes",
-    "label": "Kubernetes",
-    "value": "kubernetes"
+    "id": "developer-advocate",
+    "label": "Developer Advocate",
+    "value": "developer-advocate"
   },
   {
-    "id": "sql",
-    "label": "SQL",
-    "value": "sql"
+    "id": "developer-relations",
+    "label": "Developer Relations",
+    "value": "developer-relations"
   },
   {
-    "id": "mongodb",
-    "label": "MongoDB",
-    "value": "mongodb"
+    "id": "devops-engineer",
+    "label": "Devops Engineer",
+    "value": "devops-engineer"
   },
   {
-    "id": "redis",
-    "label": "Redis",
-    "value": "redis"
+    "id": "distinguished-engineer",
+    "label": "Distinguished Engineer",
+    "value": "distinguished-engineer"
+  },
+  { "id": "docker", "label": "Docker", "value": "docker" },
+  {
+    "id": "engineering-manager",
+    "label": "Engineering Manager",
+    "value": "engineering-manager"
   },
   {
-    "id": "graphql",
-    "label": "GraphQL",
-    "value": "graphql"
+    "id": "enterprise-architect",
+    "label": "Enterprise Architect",
+    "value": "enterprise-architect"
+  },
+  { "id": "erp-developer", "label": "Erp Developer", "value": "erp-developer" },
+  { "id": "etl-developer", "label": "Etl Developer", "value": "etl-developer" },
+  { "id": "figma", "label": "Figma", "value": "figma" },
+  {
+    "id": "field-engineer",
+    "label": "Field Engineer",
+    "value": "field-engineer"
   },
   {
-    "id": "rest-api",
-    "label": "REST API",
-    "value": "rest-api"
+    "id": "firmware-engineer",
+    "label": "Firmware Engineer",
+    "value": "firmware-engineer"
   },
   {
-    "id": "git",
-    "label": "Git",
-    "value": "git"
+    "id": "flutter-developer",
+    "label": "Flutter Developer",
+    "value": "flutter-developer"
   },
   {
-    "id": "agile",
-    "label": "Agile/Scrum",
-    "value": "agile"
+    "id": "frontend-developer",
+    "label": "Frontend Developer",
+    "value": "frontend-developer"
   },
   {
-    "id": "tensorflow",
-    "label": "TensorFlow",
-    "value": "tensorflow"
+    "id": "fullstack-developer",
+    "label": "Fullstack Developer",
+    "value": "fullstack-developer"
   },
   {
-    "id": "pytorch",
-    "label": "PyTorch",
-    "value": "pytorch"
+    "id": "game-developer",
+    "label": "Game Developer",
+    "value": "game-developer"
+  },
+  { "id": "gcp-developer", "label": "Gcp Developer", "value": "gcp-developer" },
+  { "id": "git", "label": "Git", "value": "git" },
+  {
+    "id": "graduate-developer",
+    "label": "Graduate Developer",
+    "value": "graduate-developer"
+  },
+  {
+    "id": "hardware-engineer",
+    "label": "Hardware Engineer",
+    "value": "hardware-engineer"
+  },
+  { "id": "html", "label": "HTML", "value": "html" },
+  {
+    "id": "implementation-specialist",
+    "label": "Implementation Specialist",
+    "value": "implementation-specialist"
+  },
+  {
+    "id": "infrastructure-engineer",
+    "label": "Infrastructure Engineer",
+    "value": "infrastructure-engineer"
+  },
+  {
+    "id": "integration-architect",
+    "label": "Integration Architect",
+    "value": "integration-architect"
+  },
+  {
+    "id": "intern-developer",
+    "label": "Intern Developer",
+    "value": "intern-developer"
+  },
+  { "id": "ios-developer", "label": "Ios Developer", "value": "ios-developer" },
+  { "id": "java", "label": "Java", "value": "java" },
+  { "id": "javascript", "label": "JavaScript", "value": "javascript" },
+  {
+    "id": "junior-developer",
+    "label": "Junior Developer",
+    "value": "junior-developer"
+  },
+  { "id": "kubernetes", "label": "Kubernetes", "value": "kubernetes" },
+  {
+    "id": "legacy-systems-engineer",
+    "label": "Legacy Systems Engineer",
+    "value": "legacy-systems-engineer"
+  },
+  {
+    "id": "linux-administrator",
+    "label": "Linux Administrator",
+    "value": "linux-administrator"
   },
   {
     "id": "machine-learning",
@@ -115,18 +229,240 @@
     "value": "machine-learning"
   },
   {
-    "id": "data-analysis",
-    "label": "Data Analysis",
-    "value": "data-analysis"
+    "id": "machine-learning-engineer",
+    "label": "Machine Learning Engineer",
+    "value": "machine-learning-engineer"
   },
   {
-    "id": "figma",
-    "label": "Figma",
-    "value": "figma"
+    "id": "mainframe-developer",
+    "label": "Mainframe Developer",
+    "value": "mainframe-developer"
+  },
+  { "id": "manual-tester", "label": "Manual Tester", "value": "manual-tester" },
+  {
+    "id": "microservices-architect",
+    "label": "Microservices Architect",
+    "value": "microservices-architect"
   },
   {
-    "id": "adobe-creative-suite",
-    "label": "Adobe Creative Suite",
-    "value": "adobe-creative-suite"
+    "id": "migration-specialist",
+    "label": "Migration Specialist",
+    "value": "migration-specialist"
+  },
+  {
+    "id": "mobile-developer",
+    "label": "Mobile Developer",
+    "value": "mobile-developer"
+  },
+  { "id": "mongodb", "label": "Mongodb", "value": "mongodb" },
+  {
+    "id": "network-engineer",
+    "label": "Network Engineer",
+    "value": "network-engineer"
+  },
+  { "id": "nlp-engineer", "label": "Nlp Engineer", "value": "nlp-engineer" },
+  { "id": "nodejs", "label": "Nodejs", "value": "nodejs" },
+  {
+    "id": "oracle-developer",
+    "label": "Oracle Developer",
+    "value": "oracle-developer"
+  },
+  {
+    "id": "performance-tester",
+    "label": "Performance Tester",
+    "value": "performance-tester"
+  },
+  {
+    "id": "penetration-tester",
+    "label": "Penetration Tester",
+    "value": "penetration-tester"
+  },
+  {
+    "id": "platform-engineer",
+    "label": "Platform Engineer",
+    "value": "platform-engineer"
+  },
+  {
+    "id": "presales-engineer",
+    "label": "Presales Engineer",
+    "value": "presales-engineer"
+  },
+  {
+    "id": "principal-engineer",
+    "label": "Principal Engineer",
+    "value": "principal-engineer"
+  },
+  {
+    "id": "product-manager",
+    "label": "Product Manager",
+    "value": "product-manager"
+  },
+  { "id": "product-owner", "label": "Product Owner", "value": "product-owner" },
+  {
+    "id": "project-manager",
+    "label": "Project Manager",
+    "value": "project-manager"
+  },
+  {
+    "id": "program-manager",
+    "label": "Program Manager",
+    "value": "program-manager"
+  },
+  { "id": "pytorch", "label": "Pytorch", "value": "pytorch" },
+  { "id": "qa-engineer", "label": "Qa Engineer", "value": "qa-engineer" },
+  { "id": "react", "label": "React", "value": "react" },
+  {
+    "id": "react-native-developer",
+    "label": "React Native Developer",
+    "value": "react-native-developer"
+  },
+  { "id": "redis", "label": "Redis", "value": "redis" },
+  {
+    "id": "release-engineer",
+    "label": "Release Engineer",
+    "value": "release-engineer"
+  },
+  {
+    "id": "remote-developer",
+    "label": "Remote Developer",
+    "value": "remote-developer"
+  },
+  {
+    "id": "research-scientist",
+    "label": "Research Scientist",
+    "value": "research-scientist"
+  },
+  { "id": "rest-api", "label": "Rest Api", "value": "rest-api" },
+  {
+    "id": "robotics-engineer",
+    "label": "Robotics Engineer",
+    "value": "robotics-engineer"
+  },
+  { "id": "sap-developer", "label": "Sap Developer", "value": "sap-developer" },
+  { "id": "scrum-master", "label": "Scrum Master", "value": "scrum-master" },
+  {
+    "id": "security-engineer",
+    "label": "Security Engineer",
+    "value": "security-engineer"
+  },
+  {
+    "id": "senior-software-engineer",
+    "label": "Senior Software Engineer",
+    "value": "senior-software-engineer"
+  },
+  {
+    "id": "sharepoint-developer",
+    "label": "Sharepoint Developer",
+    "value": "sharepoint-developer"
+  },
+  {
+    "id": "site-reliability-engineer",
+    "label": "Site Reliability Engineer",
+    "value": "site-reliability-engineer"
+  },
+  {
+    "id": "smart-contract-developer",
+    "label": "Smart Contract Developer",
+    "value": "smart-contract-developer"
+  },
+  {
+    "id": "software-architect",
+    "label": "Software Architect",
+    "value": "software-architect"
+  },
+  {
+    "id": "software-engineer",
+    "label": "Software Engineer",
+    "value": "software-engineer"
+  },
+  {
+    "id": "solutions-architect",
+    "label": "Solutions Architect",
+    "value": "solutions-architect"
+  },
+  {
+    "id": "solutions-engineer",
+    "label": "Solutions Engineer",
+    "value": "solutions-engineer"
+  },
+  { "id": "sql", "label": "Sql", "value": "sql" },
+  {
+    "id": "staff-engineer",
+    "label": "Staff Engineer",
+    "value": "staff-engineer"
+  },
+  { "id": "startup-cto", "label": "Startup Cto", "value": "startup-cto" },
+  {
+    "id": "support-engineer",
+    "label": "Support Engineer",
+    "value": "support-engineer"
+  },
+  {
+    "id": "systems-administrator",
+    "label": "Systems Administrator",
+    "value": "systems-administrator"
+  },
+  {
+    "id": "systems-analyst",
+    "label": "Systems Analyst",
+    "value": "systems-analyst"
+  },
+  { "id": "team-lead", "label": "Team Lead", "value": "team-lead" },
+  {
+    "id": "technical-consultant",
+    "label": "Technical Consultant",
+    "value": "technical-consultant"
+  },
+  {
+    "id": "technical-evangelist",
+    "label": "Technical Evangelist",
+    "value": "technical-evangelist"
+  },
+  {
+    "id": "technical-lead",
+    "label": "Technical Lead",
+    "value": "technical-lead"
+  },
+  {
+    "id": "technical-writer",
+    "label": "Technical Writer",
+    "value": "technical-writer"
+  },
+  { "id": "tensorflow", "label": "Tensorflow", "value": "tensorflow" },
+  {
+    "id": "trainee-developer",
+    "label": "Trainee Developer",
+    "value": "trainee-developer"
+  },
+  { "id": "typescript", "label": "TypeScript", "value": "typescript" },
+  {
+    "id": "ui-ux-designer",
+    "label": "Ui Ux Designer",
+    "value": "ui-ux-designer"
+  },
+  {
+    "id": "unity-developer",
+    "label": "Unity Developer",
+    "value": "unity-developer"
+  },
+  {
+    "id": "unreal-developer",
+    "label": "Unreal Developer",
+    "value": "unreal-developer"
+  },
+  {
+    "id": "vp-engineering",
+    "label": "Vp Engineering",
+    "value": "vp-engineering"
+  },
+  {
+    "id": "web3-developer",
+    "label": "Web3 Developer",
+    "value": "web3-developer"
+  },
+  {
+    "id": "windows-administrator",
+    "label": "Windows Administrator",
+    "value": "windows-administrator"
   }
 ]
