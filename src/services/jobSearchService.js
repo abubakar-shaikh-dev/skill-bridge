@@ -1,13 +1,5 @@
 const API_BASE_URL = "https://api.theirstack.com/v1";
-const API_KEY = "";
 
-/**
- * Search for jobs using TheirStack API
- * @param {string} jobTitle - The job title to search for
- * @param {Array} skills - Array of skills (optional, for display purposes)
- * @param {number} limit - Number of jobs to return (default: 10)
- * @returns {Promise<Array>} Array of formatted job objects
- */
 export const searchJobs = async (jobTitle, skills = [], limit = 10) => {
   try {
     const requestBody = {
@@ -44,7 +36,6 @@ export const searchJobs = async (jobTitle, skills = [], limit = 10) => {
 
     const data = await response.json();
 
-    // Transform the API response to match our component's expected format
     return transformJobResults(data.data || [], skills);
   } catch (error) {
     console.error("Error searching jobs:", error);
@@ -52,12 +43,6 @@ export const searchJobs = async (jobTitle, skills = [], limit = 10) => {
   }
 };
 
-/**
- * Transform TheirStack API results to our component's expected format
- * @param {Array} apiResults - Raw results from TheirStack API
- * @param {Array} userSkills - User's selected skills for display
- * @returns {Array} Formatted job objects
- */
 const transformJobResults = (apiResults, userSkills) => {
   return apiResults.map((job, index) => ({
     id: job.id || index + 1,
@@ -75,9 +60,6 @@ const transformJobResults = (apiResults, userSkills) => {
   }));
 };
 
-/**
- * Format location information
- */
 const formatLocation = (job) => {
   // Use the formatted location if available, otherwise build from parts
   if (job.location) {
@@ -101,9 +83,6 @@ const formatLocation = (job) => {
   return job.remote ? `${location} (Remote Available)` : location;
 };
 
-/**
- * Format salary information
- */
 const formatSalary = (job) => {
   // Check if salary_string is available first
   if (job.salary_string) {
@@ -125,9 +104,6 @@ const formatSalary = (job) => {
   return "Salary Not Disclosed";
 };
 
-/**
- * Format salary amount with currency
- */
 const formatSalaryAmount = (amount, currency) => {
   if (currency === "INR") {
     // Format Indian Rupees
@@ -149,9 +125,6 @@ const formatSalaryAmount = (amount, currency) => {
   return `${currency} ${amount.toLocaleString()}`;
 };
 
-/**
- * Extract and match skills from job description
- */
 const extractSkills = (job, userSkills) => {
   // First, try to use technology_slugs from the API
   if (job.technology_slugs && job.technology_slugs.length > 0) {
@@ -224,9 +197,6 @@ const extractSkills = (job, userSkills) => {
   return foundSkills.slice(0, 3); // Limit to 3 extracted skills
 };
 
-/**
- * Determine experience level based on job title and description
- */
 const determineExperienceLevel = (job) => {
   // Use the seniority field from API if available
   if (job.seniority) {
