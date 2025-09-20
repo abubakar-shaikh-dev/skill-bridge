@@ -48,5 +48,500 @@
     "id": "mobile-developer",
     "label": "Mobile Developer",
     "value": "mobile-developer"
+  },
+  {
+    "id": "android-developer",
+    "label": "Android Developer",
+    "value": "android-developer"
+  },
+  {
+    "id": "ios-developer",
+    "label": "iOS Developer",
+    "value": "ios-developer"
+  },
+  {
+    "id": "react-native-developer",
+    "label": "React Native Developer",
+    "value": "react-native-developer"
+  },
+  {
+    "id": "flutter-developer",
+    "label": "Flutter Developer",
+    "value": "flutter-developer"
+  },
+  {
+    "id": "qa-engineer",
+    "label": "QA Engineer",
+    "value": "qa-engineer"
+  },
+  {
+    "id": "automation-tester",
+    "label": "Automation Tester",
+    "value": "automation-tester"
+  },
+  {
+    "id": "manual-tester",
+    "label": "Manual Tester",
+    "value": "manual-tester"
+  },
+  {
+    "id": "performance-tester",
+    "label": "Performance Tester",
+    "value": "performance-tester"
+  },
+  {
+    "id": "security-engineer",
+    "label": "Security Engineer",
+    "value": "security-engineer"
+  },
+  {
+    "id": "cybersecurity-analyst",
+    "label": "Cybersecurity Analyst",
+    "value": "cybersecurity-analyst"
+  },
+  {
+    "id": "penetration-tester",
+    "label": "Penetration Tester",
+    "value": "penetration-tester"
+  },
+  {
+    "id": "cloud-architect",
+    "label": "Cloud Architect",
+    "value": "cloud-architect"
+  },
+  {
+    "id": "cloud-engineer",
+    "label": "Cloud Engineer",
+    "value": "cloud-engineer"
+  },
+  {
+    "id": "aws-developer",
+    "label": "AWS Developer",
+    "value": "aws-developer"
+  },
+  {
+    "id": "azure-developer",
+    "label": "Azure Developer",
+    "value": "azure-developer"
+  },
+  {
+    "id": "gcp-developer",
+    "label": "GCP Developer",
+    "value": "gcp-developer"
+  },
+  {
+    "id": "database-administrator",
+    "label": "Database Administrator",
+    "value": "database-administrator"
+  },
+  {
+    "id": "database-developer",
+    "label": "Database Developer",
+    "value": "database-developer"
+  },
+  {
+    "id": "data-engineer",
+    "label": "Data Engineer",
+    "value": "data-engineer"
+  },
+  {
+    "id": "data-analyst",
+    "label": "Data Analyst",
+    "value": "data-analyst"
+  },
+  {
+    "id": "business-analyst",
+    "label": "Business Analyst",
+    "value": "business-analyst"
+  },
+  {
+    "id": "systems-analyst",
+    "label": "Systems Analyst",
+    "value": "systems-analyst"
+  },
+  {
+    "id": "technical-writer",
+    "label": "Technical Writer",
+    "value": "technical-writer"
+  },
+  {
+    "id": "scrum-master",
+    "label": "Scrum Master",
+    "value": "scrum-master"
+  },
+  {
+    "id": "project-manager",
+    "label": "Project Manager",
+    "value": "project-manager"
+  },
+  {
+    "id": "program-manager",
+    "label": "Program Manager",
+    "value": "program-manager"
+  },
+  {
+    "id": "product-owner",
+    "label": "Product Owner",
+    "value": "product-owner"
+  },
+  {
+    "id": "technical-lead",
+    "label": "Technical Lead",
+    "value": "technical-lead"
+  },
+  {
+    "id": "team-lead",
+    "label": "Team Lead",
+    "value": "team-lead"
+  },
+  {
+    "id": "engineering-manager",
+    "label": "Engineering Manager",
+    "value": "engineering-manager"
+  },
+  {
+    "id": "cto",
+    "label": "Chief Technology Officer",
+    "value": "cto"
+  },
+  {
+    "id": "vp-engineering",
+    "label": "VP of Engineering",
+    "value": "vp-engineering"
+  },
+  {
+    "id": "site-reliability-engineer",
+    "label": "Site Reliability Engineer",
+    "value": "site-reliability-engineer"
+  },
+  {
+    "id": "platform-engineer",
+    "label": "Platform Engineer",
+    "value": "platform-engineer"
+  },
+  {
+    "id": "infrastructure-engineer",
+    "label": "Infrastructure Engineer",
+    "value": "infrastructure-engineer"
+  },
+  {
+    "id": "network-engineer",
+    "label": "Network Engineer",
+    "value": "network-engineer"
+  },
+  {
+    "id": "systems-administrator",
+    "label": "Systems Administrator",
+    "value": "systems-administrator"
+  },
+  {
+    "id": "linux-administrator",
+    "label": "Linux Administrator",
+    "value": "linux-administrator"
+  },
+  {
+    "id": "windows-administrator",
+    "label": "Windows Administrator",
+    "value": "windows-administrator"
+  },
+  {
+    "id": "blockchain-developer",
+    "label": "Blockchain Developer",
+    "value": "blockchain-developer"
+  },
+  {
+    "id": "smart-contract-developer",
+    "label": "Smart Contract Developer",
+    "value": "smart-contract-developer"
+  },
+  {
+    "id": "web3-developer",
+    "label": "Web3 Developer",
+    "value": "web3-developer"
+  },
+  {
+    "id": "game-developer",
+    "label": "Game Developer",
+    "value": "game-developer"
+  },
+  {
+    "id": "unity-developer",
+    "label": "Unity Developer",
+    "value": "unity-developer"
+  },
+  {
+    "id": "unreal-developer",
+    "label": "Unreal Developer",
+    "value": "unreal-developer"
+  },
+  {
+    "id": "ar-vr-developer",
+    "label": "AR/VR Developer",
+    "value": "ar-vr-developer"
+  },
+  {
+    "id": "embedded-systems-engineer",
+    "label": "Embedded Systems Engineer",
+    "value": "embedded-systems-engineer"
+  },
+  {
+    "id": "firmware-engineer",
+    "label": "Firmware Engineer",
+    "value": "firmware-engineer"
+  },
+  {
+    "id": "hardware-engineer",
+    "label": "Hardware Engineer",
+    "value": "hardware-engineer"
+  },
+  {
+    "id": "robotics-engineer",
+    "label": "Robotics Engineer",
+    "value": "robotics-engineer"
+  },
+  {
+    "id": "ai-engineer",
+    "label": "AI Engineer",
+    "value": "ai-engineer"
+  },
+  {
+    "id": "computer-vision-engineer",
+    "label": "Computer Vision Engineer",
+    "value": "computer-vision-engineer"
+  },
+  {
+    "id": "nlp-engineer",
+    "label": "NLP Engineer",
+    "value": "nlp-engineer"
+  },
+  {
+    "id": "deep-learning-engineer",
+    "label": "Deep Learning Engineer",
+    "value": "deep-learning-engineer"
+  },
+  {
+    "id": "research-scientist",
+    "label": "Research Scientist",
+    "value": "research-scientist"
+  },
+  {
+    "id": "algorithm-engineer",
+    "label": "Algorithm Engineer",
+    "value": "algorithm-engineer"
+  },
+  {
+    "id": "software-engineer",
+    "label": "Software Engineer",
+    "value": "software-engineer"
+  },
+  {
+    "id": "senior-software-engineer",
+    "label": "Senior Software Engineer",
+    "value": "senior-software-engineer"
+  },
+  {
+    "id": "principal-engineer",
+    "label": "Principal Engineer",
+    "value": "principal-engineer"
+  },
+  {
+    "id": "staff-engineer",
+    "label": "Staff Engineer",
+    "value": "staff-engineer"
+  },
+  {
+    "id": "distinguished-engineer",
+    "label": "Distinguished Engineer",
+    "value": "distinguished-engineer"
+  },
+  {
+    "id": "solutions-architect",
+    "label": "Solutions Architect",
+    "value": "solutions-architect"
+  },
+  {
+    "id": "enterprise-architect",
+    "label": "Enterprise Architect",
+    "value": "enterprise-architect"
+  },
+  {
+    "id": "integration-architect",
+    "label": "Integration Architect",
+    "value": "integration-architect"
+  },
+  {
+    "id": "api-developer",
+    "label": "API Developer",
+    "value": "api-developer"
+  },
+  {
+    "id": "microservices-architect",
+    "label": "Microservices Architect",
+    "value": "microservices-architect"
+  },
+  {
+    "id": "etl-developer",
+    "label": "ETL Developer",
+    "value": "etl-developer"
+  },
+  {
+    "id": "bi-developer",
+    "label": "BI Developer",
+    "value": "bi-developer"
+  },
+  {
+    "id": "salesforce-developer",
+    "label": "Salesforce Developer",
+    "value": "salesforce-developer"
+  },
+  {
+    "id": "sharepoint-developer",
+    "label": "SharePoint Developer",
+    "value": "sharepoint-developer"
+  },
+  {
+    "id": "crm-developer",
+    "label": "CRM Developer",
+    "value": "crm-developer"
+  },
+  {
+    "id": "erp-developer",
+    "label": "ERP Developer",
+    "value": "erp-developer"
+  },
+  {
+    "id": "sap-developer",
+    "label": "SAP Developer",
+    "value": "sap-developer"
+  },
+  {
+    "id": "oracle-developer",
+    "label": "Oracle Developer",
+    "value": "oracle-developer"
+  },
+  {
+    "id": "mainframe-developer",
+    "label": "Mainframe Developer",
+    "value": "mainframe-developer"
+  },
+  {
+    "id": "legacy-systems-engineer",
+    "label": "Legacy Systems Engineer",
+    "value": "legacy-systems-engineer"
+  },
+  {
+    "id": "migration-specialist",
+    "label": "Migration Specialist",
+    "value": "migration-specialist"
+  },
+  {
+    "id": "release-engineer",
+    "label": "Release Engineer",
+    "value": "release-engineer"
+  },
+  {
+    "id": "build-engineer",
+    "label": "Build Engineer",
+    "value": "build-engineer"
+  },
+  {
+    "id": "configuration-manager",
+    "label": "Configuration Manager",
+    "value": "configuration-manager"
+  },
+  {
+    "id": "technical-consultant",
+    "label": "Technical Consultant",
+    "value": "technical-consultant"
+  },
+  {
+    "id": "implementation-specialist",
+    "label": "Implementation Specialist",
+    "value": "implementation-specialist"
+  },
+  {
+    "id": "support-engineer",
+    "label": "Support Engineer",
+    "value": "support-engineer"
+  },
+  {
+    "id": "field-engineer",
+    "label": "Field Engineer",
+    "value": "field-engineer"
+  },
+  {
+    "id": "presales-engineer",
+    "label": "Presales Engineer",
+    "value": "presales-engineer"
+  },
+  {
+    "id": "solutions-engineer",
+    "label": "Solutions Engineer",
+    "value": "solutions-engineer"
+  },
+  {
+    "id": "customer-success-engineer",
+    "label": "Customer Success Engineer",
+    "value": "customer-success-engineer"
+  },
+  {
+    "id": "developer-advocate",
+    "label": "Developer Advocate",
+    "value": "developer-advocate"
+  },
+  {
+    "id": "developer-relations",
+    "label": "Developer Relations",
+    "value": "developer-relations"
+  },
+  {
+    "id": "technical-evangelist",
+    "label": "Technical Evangelist",
+    "value": "technical-evangelist"
+  },
+  {
+    "id": "startup-cto",
+    "label": "Startup CTO",
+    "value": "startup-cto"
+  },
+  {
+    "id": "freelance-developer",
+    "label": "Freelance Developer",
+    "value": "freelance-developer"
+  },
+  {
+    "id": "consultant-developer",
+    "label": "Consultant Developer",
+    "value": "consultant-developer"
+  },
+  {
+    "id": "contract-developer",
+    "label": "Contract Developer",
+    "value": "contract-developer"
+  },
+  {
+    "id": "remote-developer",
+    "label": "Remote Developer",
+    "value": "remote-developer"
+  },
+  {
+    "id": "junior-developer",
+    "label": "Junior Developer",
+    "value": "junior-developer"
+  },
+  {
+    "id": "intern-developer",
+    "label": "Intern Developer",
+    "value": "intern-developer"
+  },
+  {
+    "id": "graduate-developer",
+    "label": "Graduate Developer",
+    "value": "graduate-developer"
+  },
+  {
+    "id": "trainee-developer",
+    "label": "Trainee Developer",
+    "value": "trainee-developer"
   }
 ]
