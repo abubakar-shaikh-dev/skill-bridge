@@ -1,4 +1,4 @@
-# 50.-BrainBytes : Skill Gap Mapper
+# BrainBytes : Skill Gap Mapper
 
 ## Getting Started
 
@@ -20,6 +20,28 @@ git clone https://github.com/mehaknaz1/BrainBytes.git
 ```bash
 npm install
 ```
+
+3. Set up environment variables:
+
+Copy the `.env.example` file to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+Then configure your API keys:
+
+#### OpenRouter API Key
+
+- Visit [OpenRouter - Grok 4 Fast (Free)](https://openrouter.ai/x-ai/grok-4-fast:free)
+- Go to the **API** tab section
+- Copy your API key and set it as `VITE_OPENROUTER_API_KEY` in your `.env` file
+
+#### TheirStack API Key
+
+- Visit [TheirStack](https://theirstack.com) and create an account
+- After login, go to [API Key Settings](https://app.theirstack.com/settings/api-key)
+- Copy your API key and set it as `VITE_THEIRSTACK_API_KEY` in your `.env` file
 
 ### Running the Application
 
